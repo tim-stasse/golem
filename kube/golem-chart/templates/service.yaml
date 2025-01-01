@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-shard-manager-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     app: shard-manager-app-{{.Values.env}}
     env: {{.Values.env}}
@@ -24,6 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-worker-executor-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     app: worker-executor-app-{{.Values.env}}
     env: {{.Values.env}}
@@ -46,6 +48,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-worker-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     app: worker-service-app-{{.Values.env}}
     env: {{.Values.env}}
@@ -72,6 +75,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-component-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     app: component-service-app-{{.Values.env}}
     env: {{.Values.env}}
@@ -95,6 +99,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: service-component-compilation-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     app: component-compilation-service-app-{{.Values.env}}
     env: {{.Values.env}}

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-shard-manager-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     env: {{.Values.env}}
 spec:
@@ -90,6 +91,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-worker-executor-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     env: {{.Values.env}}
 spec:
@@ -241,6 +243,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-worker-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     env: {{.Values.env}}
 spec:
@@ -346,6 +349,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-component-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     env: {{.Values.env}}
 spec:
@@ -469,6 +473,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-component-compilation-service-{{.Values.env}}
+  namespace: {{ .Release.namespace }}
   labels:
     env: {{.Values.env}}
 spec:
